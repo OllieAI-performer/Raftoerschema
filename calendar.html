@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalenderoverzicht</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page calendar-page">
+    <header class="calendar-hero">
+      <div>
+        <p class="eyebrow">Volledige kalenderweergave</p>
+        <h1>Maandkalender met overlap</h1>
+        <p class="lede">
+          Bekijk al je school- en toernooimomenten als kalender, zodat je in
+          een oogopslag ziet welke weken druk zijn en waar overlap ontstaat.
+        </p>
+      </div>
+      <div class="calendar-actions">
+        <a class="button-secondary" href="index.html">Terug naar planner</a>
+        <button class="button-secondary" id="today-btn" type="button">Ga naar vandaag</button>
+      </div>
+    </header>
+
+    <section class="calendar-shell">
+      <div class="calendar-toolbar">
+        <button class="nav-button" id="prev-month" type="button">Vorige</button>
+        <div class="month-title" id="month-title"></div>
+        <button class="nav-button" id="next-month" type="button">Volgende</button>
+      </div>
+      <div class="calendar-weekdays">
+        <span>Ma</span>
+        <span>Di</span>
+        <span>Wo</span>
+        <span>Do</span>
+        <span>Vr</span>
+        <span>Za</span>
+        <span>Zo</span>
+      </div>
+      <div class="calendar-grid" id="calendar-grid"></div>
+    </section>
+
+    <section class="calendar-details">
+      <div class="overview-header">
+        <h2>Maandoverzicht</h2>
+        <p id="month-summary">Nog geen items.</p>
+      </div>
+      <div class="timeline" id="month-list"></div>
+    </section>
+  </div>
+
+  <script src="calendar.js"></script>
+</body>
+</html>

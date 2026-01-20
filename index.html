@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toernooi & School Overzicht</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Overzicht voor plannen en kiezen</p>
+        <h1>Toernooi & School Planner</h1>
+        <p class="lede">
+          Een overzicht om inschrijvingen, beslismomenten en schooltoetsen
+          naast elkaar te zetten, zodat je eerder ziet wat botst en waar je op tijd
+          een keuze moet maken.
+        </p>
+        <div class="hero-tags">
+          <span>ITF</span>
+          <span>NRT</span>
+          <span>Junior Tour</span>
+          <span>Schoolrooster</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Snelle samenvatting van je vraag</h2>
+        <ul>
+          <li>Je moet ruim op tijd inschrijven voor meerdere toernooien.</li>
+          <li>Je wilt per toernooi het moment kiezen voor kwalificatie en hoofdtoernooi.</li>
+          <li>Toernooien overlappen, en het schoolschema bepaalt vaak wat haalbaar is.</li>
+        </ul>
+        <div class="hero-note">
+          Doel: 1 overzicht met beslismomenten, toetsen en overlap signalen.
+        </div>
+      </div>
+    </header>
+
+    <section class="insight-grid">
+      <div class="insight">
+        <h3>Wat je nodig hebt</h3>
+        <p>Een centraal overzicht met school, toernooien en keuzes per week.</p>
+      </div>
+      <div class="insight">
+        <h3>Waar het vaak misgaat</h3>
+        <p>Overlap tussen kwalificatie, hoofdtoernooi en toetsweken.</p>
+      </div>
+      <div class="insight">
+        <h3>Hoe dit helpt</h3>
+        <p>Leg alles op een tijdlijn en markeer keuzes en conflicts automatisch.</p>
+      </div>
+    </section>
+
+    <main class="layout">
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Schoolplanning</h2>
+          <p>Voeg toetsweken en belangrijke toetsen toe.</p>
+        </div>
+        <form id="school-form" class="form">
+          <label>
+            Titel
+            <input type="text" name="title" placeholder="Toetsweek Havo 4" required />
+          </label>
+          <label>
+            Type
+            <select name="type">
+              <option value="toetsweek">Toetsweek</option>
+              <option value="toets">Belangrijke toets</option>
+              <option value="overig">Overig</option>
+            </select>
+          </label>
+          <label>
+            Startdatum
+            <input type="date" name="start" required />
+          </label>
+          <label>
+            Einddatum (optioneel)
+            <input type="date" name="end" />
+          </label>
+          <div class="form-actions">
+            <button type="submit">Toevoegen</button>
+            <button type="button" id="school-cancel" class="button-secondary hidden">Annuleren</button>
+          </div>
+        </form>
+        <div class="list" id="school-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Toernooien</h2>
+          <p>Werk inschrijvingen uit per circuit en startmoment.</p>
+        </div>
+        <form id="tournament-form" class="form">
+          <label>
+            Naam toernooi
+            <input type="text" name="name" placeholder="ITF Brussels" required />
+          </label>
+          <label>
+            Circuit
+            <select name="circuit">
+              <option value="ITF">ITF</option>
+              <option value="NRT">NRT</option>
+              <option value="Junior Tour">Junior Tour</option>
+              <option value="KNLTB competitie">KNLTB competitie</option>
+              <option value="Overig">Overig</option>
+            </select>
+          </label>
+          <label>
+            Start kwalificatie
+            <input type="date" name="qual" />
+          </label>
+          <label>
+            Eind kwalificatie
+            <input type="date" name="qualEnd" />
+          </label>
+          <label>
+            Start hoofdtoernooi
+            <input type="date" name="main" required />
+          </label>
+          <label>
+            Eind hoofdtoernooi
+            <input type="date" name="mainEnd" />
+          </label>
+          <label>
+            Keuze uiterlijk
+            <input type="date" name="deadline" />
+          </label>
+          <div class="form-actions">
+            <button type="submit">Toevoegen</button>
+            <button type="button" id="tournament-cancel" class="button-secondary hidden">Annuleren</button>
+          </div>
+        </form>
+        <div class="list" id="tournament-list"></div>
+      </section>
+    </main>
+
+    <section class="overview">
+      <div class="overview-header">
+        <h2>Totaaloverzicht</h2>
+        <p>Alle gebeurtenissen op 1 tijdlijn, gesorteerd op datum.</p>
+        <a class="button-secondary calendar-link" href="calendar.html">Bekijk kalenderpagina</a>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="tips">
+      <div>
+        <h3>Handige workflow</h3>
+        <ol>
+          <li>Vul eerst het schoolschema in voor de komende maanden.</li>
+          <li>Voeg daarna alle mogelijke toernooien toe, inclusief deadlines.</li>
+          <li>Gebruik het overzicht om overlappen en keuzes te zien.</li>
+        </ol>
+      </div>
+      <div class="tip-card">
+        <h4>Tip</h4>
+        <p>Plan een vaste beslisdag per week. Zo mis je geen opties.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
